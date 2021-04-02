@@ -60,11 +60,28 @@ class _NewTransactionState extends State<NewTransaction> {
               onSubmitted: (_) =>
                   submitTransaction(), // con "_" anuncio a dart que el valor pasado por parametro no sera utilizado
             ),
-            FlatButton(
-              child: Text(
-                "Add Transaction",
+            Container(
+              height: 60,
+              child: Row(
+                children: [
+                  Text('No Date Chosen!'),
+                  FlatButton(
+                    textColor: Theme.of(context).primaryColor,
+                    onPressed: () {},
+                    child: Text(
+                      'Choose Date',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              textColor: Colors.purple,
+            ),
+            RaisedButton(
+              child: Text("Add Transaction"),
+              color: Theme.of(context).primaryColor,
+              textColor: Theme.of(context).textTheme.button.color,
               onPressed: submitTransaction,
             ),
           ],
